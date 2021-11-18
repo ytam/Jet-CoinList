@@ -48,7 +48,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/io/github/ytam/coinlist/component/CoinDetailItem.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/io/github/ytam/coinlist/component/CoinListItem.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/io/github/ytam/coinlist/component/TestCom.kt">
           <value>
             <set />
           </value>
@@ -103,6 +113,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/io/github/ytam/coinlist/extensions/DateExtension.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/io/github/ytam/coinlist/navigation/Navigation.kt">
           <value>
             <set />
@@ -114,6 +129,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/io/github/ytam/coinlist/presentation/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/io/github/ytam/coinlist/presentation/TestScreen.kt">
           <value>
             <set />
           </value>

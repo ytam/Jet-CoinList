@@ -15,7 +15,6 @@ import androidx.compose.material.TabRowDefaults.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.List
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -41,7 +40,7 @@ fun CoinListScreen(
             },
             navigationIcon = {
                 IconButton(onClick = {}) {
-                    Icon(Icons.Filled.List,"")
+                    Icon(Icons.Filled.List, "")
                 }
             },
             contentColor = androidx.compose.ui.graphics.Color.White,
@@ -59,7 +58,6 @@ fun CoinListScreen(
                         }
                     )
                     Divider(color = androidx.compose.ui.graphics.Color.Gray)
-
                 }
             }
             if (state.errorMessage.isNotBlank()) {
@@ -77,6 +75,5 @@ fun CoinListScreen(
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }
         }
-
     }
 }

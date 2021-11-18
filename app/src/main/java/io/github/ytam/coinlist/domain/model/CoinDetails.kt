@@ -7,5 +7,6 @@ data class CoinDetails(
     val firstDataDate: String,
     val lastDataDate: String,
     val symbol: String,
-    val type: String
+    val type: String,
+    val platform: String
 )

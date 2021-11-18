@@ -9,7 +9,8 @@ data class CoinDetailsResponse(
     val first_data_at: String,
     val last_data_at: String,
     val symbol: String,
-    val type: String
+    val type: String,
+    val platform: String
 )
 
 fun CoinDetailsResponse.toCoinDetails(): CoinDetails {
@@ -20,6 +21,7 @@ fun CoinDetailsResponse.toCoinDetails(): CoinDetails {
         firstDataDate = first_data_at,
         lastDataDate = last_data_at,
         symbol = symbol,
-        type = type
+        type = type,
+        platform = platform
     )
 }

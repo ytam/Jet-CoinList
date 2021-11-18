@@ -8,6 +8,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.airbnb.lottie.compose.LottieAnimation
@@ -35,7 +36,7 @@ fun SplashScreen(navController: NavController) {
     ) {
 
         val lottieCompositionResult: LottieCompositionResult =
-            rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.splash_lottie) )
+            rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.splash_lottie))
 
         val progress by animateLottieCompositionAsState(
             lottieCompositionResult.value,
