@@ -183,6 +183,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/io/github/ytam/coinlist/ui/theme/Theme.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/res/raw/splash_lottie.json">
           <value>
             <set />

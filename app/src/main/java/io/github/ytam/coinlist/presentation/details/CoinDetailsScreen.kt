@@ -74,9 +74,6 @@ fun CoinDetailsScreen(
                         CoinDetailItem("Last Date at: ", convertDateString(coin.lastDataDate) )
 
                         Spacer(modifier = Modifier.height(15.dp))
-                        CoinDetailItem("Platform: ", coin.platform)
-
-                        Spacer(modifier = Modifier.height(15.dp))
                         Text(
                             text = coin.description,
                             style = MaterialTheme.typography.body1
