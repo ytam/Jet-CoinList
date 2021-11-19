@@ -21,6 +21,7 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowLeft
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -29,6 +30,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionResult
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.LottieConstants
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
+import io.github.ytam.coinlist.R
 import io.github.ytam.coinlist.component.CoinDetailItem
 import java.text.SimpleDateFormat
 
@@ -94,7 +102,29 @@ fun CoinDetailsScreen(
                 )
             }
             if (state.isLoading) {
-                CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+
+                    val lottieCompositionResult: LottieCompositionResult =
+                        rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.loading))
+
+                    val progress by animateLottieCompositionAsState(
+                        lottieCompositionResult.value,
+                        isPlaying = true,
+                        iterations = LottieConstants.IterateForever,
+                        speed = 1.0f
+                    )
+
+                    LottieAnimation(
+                        composition = lottieCompositionResult.value,
+                        progress = progress,
+                        modifier = Modifier.padding(all = 30.dp)
+                    )
+                }
+
             }
         }
     }
