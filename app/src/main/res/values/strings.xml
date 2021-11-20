@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CoinList</string>
+    <string name="started_at">Started at: </string>
+    <string name="last_data_at">Last Data at</string>
 </resources>

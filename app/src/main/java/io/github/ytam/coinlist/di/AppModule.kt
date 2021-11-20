@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import io.github.ytam.coinlist.common.Constants
-import io.github.ytam.coinlist.data.remote.CoinListApi
+import io.github.ytam.coinlist.data.remote.service.CoinListApi
 import io.github.ytam.coinlist.data.repository.CoinListRepositoryImpl
 import io.github.ytam.coinlist.domain.repository.CoinListRepository
 import retrofit2.Retrofit

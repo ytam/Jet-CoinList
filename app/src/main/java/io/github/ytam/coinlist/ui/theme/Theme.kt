@@ -5,39 +5,39 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 
-private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+private val lightThemeColors = lightColors(
+    primary = gray50,
+    primaryVariant = gray50,
+    onPrimary = gray50,
+    secondary = black,
+    secondaryVariant = teal700,
+    onSecondary = white,
+    surface = white,
+    onSurface = black,
+    background = white,
+    onBackground = black
 )
 
-private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
-
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
+private val darkThemeColors = darkColors(
+    primary = black,
+    primaryVariant = black,
+    onPrimary = white,
+    secondary = teal200,
+    secondaryVariant = teal200,
+    onSecondary = black,
+    surface = black,
+    onSurface = white,
+    background = gray950,
+    onBackground = gray950
 )
+
 
 @Composable
 fun CoinListTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
 
     MaterialTheme(
-        colors = colors,
+        colors = if (darkTheme) darkThemeColors else lightThemeColors,
         typography = Typography,
         shapes = Shapes,
         content = content

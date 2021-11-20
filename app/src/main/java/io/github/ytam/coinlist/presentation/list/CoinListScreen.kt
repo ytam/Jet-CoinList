@@ -4,8 +4,10 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -13,7 +15,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.TabRowDefaults.Divider
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -23,7 +24,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -48,7 +48,7 @@ fun CoinListScreen(
     navController: NavController,
     viewModel: CoinListViewModel = hiltViewModel()
 ) {
-    val state = viewModel.state.value
+    var state = viewModel.state.value
     val listState = rememberLazyListState()
     val coroutineScope = rememberCoroutineScope()
     val showButton by remember {
@@ -60,9 +60,10 @@ fun CoinListScreen(
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
+            .background(MaterialTheme.colors.background)
     ) {
 
-        val (topAppBar, dataList, scrollToTopButton, errorLayout, isLoadingLayout) = createRefs()
+        val (topAppBar, dataList, scrollToTopButton, errorLayout, isLoadingLayout, errorMessageLottie) = createRefs()
 
         TopAppBar(
             modifier = Modifier.constrainAs(topAppBar) {
@@ -70,12 +71,14 @@ fun CoinListScreen(
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
                 height = Dimension.value(56.dp)
-
             },
             title = {
-                Text(text = "Coin List")
+                Text(
+                    text = "Coin List",
+                    modifier = Modifier.fillMaxWidth()
+                )
             },
-            contentColor = Color.White
+            contentColor = MaterialTheme.colors.onSurface
         )
 
         LazyColumn(
@@ -95,19 +98,40 @@ fun CoinListScreen(
                         navController.navigate(Screen.CoinDetailsScreen.route + "/${coinItem.id}")
                     }
                 )
-                Divider(color = Color.Gray)
             }
 
         }
 
         if (state.errorMessage.isNotBlank()) {
+
+            val lottieCompositionResult: LottieCompositionResult =
+                rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.error_dialog))
+
+            val progress by animateLottieCompositionAsState(
+                lottieCompositionResult.value,
+                isPlaying = true,
+                iterations = LottieConstants.IterateForever,
+                speed = 1.0f
+            )
+
+            LottieAnimation(
+                composition = lottieCompositionResult.value,
+                progress = progress,
+
+                modifier = Modifier.constrainAs(errorMessageLottie) {
+                    top.linkTo(topAppBar.bottom, 56.dp)
+                    start.linkTo(parent.start, 20.dp)
+                    end.linkTo(parent.end, 20.dp)
+                    height = Dimension.value(156.dp)
+                },
+            )
+
             Text(
                 text = state.errorMessage,
                 color = MaterialTheme.colors.error,
                 textAlign = TextAlign.Center,
                 modifier = Modifier.constrainAs(errorLayout) {
-                    top.linkTo(topAppBar.bottom, 56.dp)
-                    bottom.linkTo(parent.bottom, 8.dp)
+                    top.linkTo(errorMessageLottie.bottom, 20.dp)
                     start.linkTo(parent.start, 20.dp)
                     end.linkTo(parent.end, 20.dp)
                 }
@@ -123,7 +147,6 @@ fun CoinListScreen(
                     bottom.linkTo(parent.bottom, 8.dp)
                     start.linkTo(parent.start, 20.dp)
                     end.linkTo(parent.end, 20.dp)
-
                 }
             ) {
 

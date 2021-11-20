@@ -19,7 +19,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -32,10 +31,11 @@ fun CoinListItem(
 ) {
 
     Card(
-        backgroundColor = Color.LightGray,
+        backgroundColor = MaterialTheme.colors.surface,
         modifier = Modifier
             .clip(RoundedCornerShape(4.dp))
             .clickable { onItemClick(coin) }
+            .padding(8.dp)
     ) {
         Row(
             modifier = Modifier
@@ -46,7 +46,7 @@ fun CoinListItem(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
 
-            Column( modifier = Modifier.align(Alignment.CenterVertically)){
+            Column(modifier = Modifier.align(Alignment.CenterVertically)) {
                 Text(
                     text = coin.symbol,
                     modifier = Modifier

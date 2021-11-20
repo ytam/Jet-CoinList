@@ -1,4 +1,4 @@
-package io.github.ytam.coinlist.data.remote
+package io.github.ytam.coinlist.data.remote.service
 
 import io.github.ytam.coinlist.data.remote.response.CoinDetailsResponse
 import io.github.ytam.coinlist.data.remote.response.CoinItemResponse

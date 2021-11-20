@@ -1,8 +1,8 @@
 package io.github.ytam.coinlist.data.repository
 
-import io.github.ytam.coinlist.data.remote.CoinListApi
 import io.github.ytam.coinlist.data.remote.response.CoinDetailsResponse
 import io.github.ytam.coinlist.data.remote.response.CoinItemResponse
+import io.github.ytam.coinlist.data.remote.service.CoinListApi
 import io.github.ytam.coinlist.domain.repository.CoinListRepository
 import javax.inject.Inject
 
