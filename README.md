@@ -9,6 +9,15 @@ CoinList is a simple app based on Jetpack Compose, modern tech-stack and Clean A
 </p>
 </br>
 
+ <p align="center">
+  <img src="./arts/spash.png" width="240">
+  <img src="./arts/list.png" width="240">
+  <img src="./arts/detail.png" width="240">
+</p>
+
+
+
+
 <img src="/arts/light.gif" align="right"  width="24%"/>
 
 ## Tech stack
@@ -33,3 +42,21 @@ CoinList is a simple app based on Jetpack Compose, modern tech-stack and Clean A
 ## MAD Score
 <img src="/arts/summary.png"/>
 <img src="/arts/kotlin.png"/>
+
+# License
+```xml
+Designed and developed by 2021 ytam
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
