@@ -7,16 +7,12 @@
 <p align="center">  
 CoinList is a simple app based on Jetpack Compose, modern tech-stack and Clean Architecture. The project is quite simple which shows the list of crypto currencies and their general info details gets from API.
 </p>
-</br>
 
  <p align="center">
-  <img src="./arts/spash.png" width="240">
+  <img src="./arts/splash.png" width="240">
   <img src="./arts/list.png" width="240">
   <img src="./arts/detail.png" width="240">
 </p>
-
-
-
 
 <img src="/arts/light.gif" align="right"  width="24%"/>
 
