@@ -8,9 +8,9 @@ import io.github.ytam.jetcoinlist.common.Constants
 import io.github.ytam.jetcoinlist.data.remote.service.CoinListApi
 import io.github.ytam.jetcoinlist.data.repository.CoinListRepositoryImpl
 import io.github.ytam.jetcoinlist.domain.repository.CoinListRepository
+import javax.inject.Singleton
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)

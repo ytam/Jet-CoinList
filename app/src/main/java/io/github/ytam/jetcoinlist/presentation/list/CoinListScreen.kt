@@ -89,9 +89,11 @@ fun CoinListScreen(
                 viewModel.updateSearchWidgetState(newValue = SearchWidgetState.OPENED)
             }
         )
-        Spacer(modifier = Modifier
-            .height(8.dp)
-            .fillMaxWidth())
+        Spacer(
+            modifier = Modifier
+                .height(8.dp)
+                .fillMaxWidth()
+        )
 
         ListComponent(
             navController,
@@ -107,15 +109,15 @@ fun ListComponent(
     searchText: String,
     viewModel: CoinListViewModel = hiltViewModel()
 ) {
-    LazyColumn(
-
-    ) {
-        items(viewModel.state.value.data.filter {
-            it.name.contains(
-                searchText,
-                ignoreCase = true
-            )
-        }) { coinItem ->
+    LazyColumn() {
+        items(
+            viewModel.state.value.data.filter {
+                it.name.contains(
+                    searchText,
+                    ignoreCase = true
+                )
+            }
+        ) { coinItem ->
             CoinListItem(
                 coin = coinItem,
                 onItemClick = {
@@ -192,8 +194,9 @@ fun SearchAppBar(
         elevation = AppBarDefaults.TopAppBarElevation,
         color = MaterialTheme.colors.primary
     ) {
-        TextField(modifier = Modifier
-            .fillMaxWidth(),
+        TextField(
+            modifier = Modifier
+                .fillMaxWidth(),
             value = text,
             onValueChange = {
                 onTextChange(it)
@@ -252,7 +255,8 @@ fun SearchAppBar(
                 backgroundColor = Color.Transparent,
                 cursorColor = Color.Black.copy(alpha = ContentAlpha.medium),
                 textColor = Color.Black
-            ))
+            )
+        )
     }
 }
 
@@ -311,5 +315,3 @@ fun DefaultAppBar(onSearchClicked: () -> Unit) {
 fun DefaultPreview() {
     LottieWithDesc(R.raw.error_dialog, "terfghcjcgh")
 }
-
-

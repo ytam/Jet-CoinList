@@ -1,34 +1,12 @@
 package io.github.ytam.jetcoinlist.extensions
 
 import java.text.SimpleDateFormat
-import java.util.*
-
-/**
- * Pattern: yyyy-MM-dd HH:mm:ss
- */
-fun Date.formatToServerDateTimeDefaults(): String {
-    val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-    return sdf.format(this)
-}
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 fun Date.formatToTruncatedDateTime(): String {
     val sdf = SimpleDateFormat("yyyyMMddHHmmss", Locale.getDefault())
-    return sdf.format(this)
-}
-
-/**
- * Pattern: yyyy-MM-dd
- */
-fun Date.formatToServerDateDefaults(): String {
-    val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-    return sdf.format(this)
-}
-
-/**
- * Pattern: HH:mm:ss
- */
-fun Date.formatToServerTimeDefaults(): String {
-    val sdf = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
     return sdf.format(this)
 }
 

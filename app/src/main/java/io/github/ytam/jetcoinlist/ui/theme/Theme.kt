@@ -32,7 +32,6 @@ private val darkThemeColors = darkColors(
     onBackground = gray950
 )
 
-
 @Composable
 fun CoinListTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
 

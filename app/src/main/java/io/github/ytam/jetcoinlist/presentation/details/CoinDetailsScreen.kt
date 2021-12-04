@@ -56,8 +56,7 @@ fun CoinDetailsScreen(
                 }
             },
             navigationIcon = {
-                IconButton(onClick = { navController.navigateUp() })
-                {
+                IconButton(onClick = { navController.navigateUp() }) {
                     Icon(Icons.Filled.KeyboardArrowLeft, "")
                 }
             },
@@ -142,7 +141,6 @@ fun CoinDetailsScreen(
                         modifier = Modifier.padding(all = 30.dp)
                     )
                 }
-
             }
         }
     }
