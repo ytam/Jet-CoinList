@@ -1,6 +1,6 @@
 package io.github.ytam.jetcoinlist.domain.usecase
 
-import io.github.ytam.jetcoinlist.common.Resource
+import io.github.ytam.jetcoinlist.data.remote.common.Resource
 import io.github.ytam.jetcoinlist.data.remote.response.toCoinDetails
 import io.github.ytam.jetcoinlist.domain.model.CoinDetails
 import io.github.ytam.jetcoinlist.domain.repository.CoinListRepository

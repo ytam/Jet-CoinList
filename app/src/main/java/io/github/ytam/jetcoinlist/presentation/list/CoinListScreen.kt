@@ -49,8 +49,8 @@ import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import io.github.ytam.jetcoinlist.R
-import io.github.ytam.jetcoinlist.component.CoinListItem
-import io.github.ytam.jetcoinlist.navigation.Screen
+import io.github.ytam.jetcoinlist.presentation.component.CoinListItem
+import io.github.ytam.jetcoinlist.presentation.navigation.Screen
 
 @ExperimentalAnimationApi
 @ExperimentalComposeUiApi

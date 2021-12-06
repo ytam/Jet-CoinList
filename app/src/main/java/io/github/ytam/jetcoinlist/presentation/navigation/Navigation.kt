@@ -1,4 +1,4 @@
-package io.github.ytam.jetcoinlist.navigation
+package io.github.ytam.jetcoinlist.presentation.navigation
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable

@@ -1,4 +1,4 @@
-package io.github.ytam.jetcoinlist.extensions
+package io.github.ytam.jetcoinlist.data.remote.extensions
 
 import java.text.SimpleDateFormat
 import java.util.Calendar

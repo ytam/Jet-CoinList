@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import io.github.ytam.jetcoinlist.common.Constants
+import io.github.ytam.jetcoinlist.data.remote.common.Constants
 import io.github.ytam.jetcoinlist.data.remote.service.CoinListApi
 import io.github.ytam.jetcoinlist.data.repository.CoinListRepositoryImpl
 import io.github.ytam.jetcoinlist.domain.repository.CoinListRepository

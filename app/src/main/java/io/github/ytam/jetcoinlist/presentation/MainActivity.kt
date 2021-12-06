@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.ExperimentalAnimationApi
 import dagger.hilt.android.AndroidEntryPoint
-import io.github.ytam.jetcoinlist.navigation.Navigation
+import io.github.ytam.jetcoinlist.presentation.navigation.Navigation
 import io.github.ytam.jetcoinlist.ui.theme.CoinListTheme
 
 @AndroidEntryPoint

@@ -37,7 +37,7 @@ import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import io.github.ytam.jetcoinlist.R
-import io.github.ytam.jetcoinlist.component.CoinDetailItem
+import io.github.ytam.jetcoinlist.presentation.component.CoinDetailItem
 import java.text.SimpleDateFormat
 
 @Composable

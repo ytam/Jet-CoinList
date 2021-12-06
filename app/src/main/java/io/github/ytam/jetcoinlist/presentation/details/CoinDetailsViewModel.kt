@@ -6,8 +6,8 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.ytam.jetcoinlist.common.Constants
-import io.github.ytam.jetcoinlist.common.Resource
+import io.github.ytam.jetcoinlist.data.remote.common.Constants
+import io.github.ytam.jetcoinlist.data.remote.common.Resource
 import io.github.ytam.jetcoinlist.domain.usecase.GetCoinDetailsUseCase
 import javax.inject.Inject
 import kotlinx.coroutines.flow.launchIn

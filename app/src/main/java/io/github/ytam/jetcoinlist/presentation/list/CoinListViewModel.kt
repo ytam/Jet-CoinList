@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.ytam.jetcoinlist.common.Resource
+import io.github.ytam.jetcoinlist.data.remote.common.Resource
 import io.github.ytam.jetcoinlist.domain.usecase.GetCoinListUseCase
 import javax.inject.Inject
 import kotlinx.coroutines.flow.launchIn

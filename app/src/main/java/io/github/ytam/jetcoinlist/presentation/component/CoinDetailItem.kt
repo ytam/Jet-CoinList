@@ -1,4 +1,4 @@
-package io.github.ytam.jetcoinlist.component
+package io.github.ytam.jetcoinlist.presentation.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
