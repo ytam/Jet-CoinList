@@ -41,7 +41,7 @@ CoinList is a simple app based on Jetpack Compose, modern tech-stack and Clean A
 
 # License
 ```xml
-Designed and developed by 2021 ytam
+Designed and developed by 2021 Yıldırım Tam
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
