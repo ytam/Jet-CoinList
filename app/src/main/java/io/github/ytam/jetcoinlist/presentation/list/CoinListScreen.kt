@@ -71,8 +71,6 @@ fun CoinListScreen(
     ) {
 
         MainAppBar(
-            modifier = Modifier
-                .fillMaxWidth(),
             searchWidgetState = searchWidgetState,
             searchTextState = searchTextState,
             onTextChange = {
@@ -262,7 +260,6 @@ fun SearchAppBar(
 
 @Composable
 fun MainAppBar(
-    modifier: Modifier,
     searchWidgetState: SearchWidgetState,
     searchTextState: String,
     onTextChange: (String) -> Unit,
@@ -272,7 +269,7 @@ fun MainAppBar(
 ) {
     when (searchWidgetState) {
         SearchWidgetState.CLOSED -> {
-            DefaultAppBar(
+            CoinListAppBar(
                 onSearchClicked = onSearchTriggered
             )
         }
@@ -288,7 +285,7 @@ fun MainAppBar(
 }
 
 @Composable
-fun DefaultAppBar(onSearchClicked: () -> Unit) {
+fun CoinListAppBar(onSearchClicked: () -> Unit) {
     TopAppBar(
         title = {
             Text(
@@ -312,6 +309,6 @@ fun DefaultAppBar(onSearchClicked: () -> Unit) {
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun CoinListScreenPreview() {
     LottieWithDesc(R.raw.error_dialog, "terfghcjcgh")
 }

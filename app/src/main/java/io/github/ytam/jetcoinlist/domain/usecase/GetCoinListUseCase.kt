@@ -4,11 +4,11 @@ import io.github.ytam.jetcoinlist.common.Resource
 import io.github.ytam.jetcoinlist.data.remote.response.toCoinItem
 import io.github.ytam.jetcoinlist.domain.model.CoinItem
 import io.github.ytam.jetcoinlist.domain.repository.CoinListRepository
-import java.io.IOException
-import javax.inject.Inject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
+import java.io.IOException
+import javax.inject.Inject
 
 class GetCoinListUseCase @Inject constructor(
     private val repository: CoinListRepository

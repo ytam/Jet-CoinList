@@ -9,9 +9,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import io.github.ytam.jetcoinlist.common.Constants
 import io.github.ytam.jetcoinlist.common.Resource
 import io.github.ytam.jetcoinlist.domain.usecase.GetCoinDetailsUseCase
-import javax.inject.Inject
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import javax.inject.Inject
 
 @HiltViewModel
 class CoinDetailsViewModel @Inject constructor(
