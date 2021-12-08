@@ -178,6 +178,7 @@ fun LottieWithDesc(
     }
 }
 
+@Suppress("LongMethod")
 @Composable
 fun SearchAppBar(
     text: String,
@@ -258,6 +259,7 @@ fun SearchAppBar(
     }
 }
 
+@Suppress("LongParameterList")
 @Composable
 fun MainAppBar(
     searchWidgetState: SearchWidgetState,

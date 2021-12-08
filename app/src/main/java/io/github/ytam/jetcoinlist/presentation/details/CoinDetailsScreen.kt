@@ -40,6 +40,7 @@ import io.github.ytam.jetcoinlist.R
 import io.github.ytam.jetcoinlist.component.CoinDetailItem
 import java.text.SimpleDateFormat
 
+@Suppress("LongMethod")
 @Composable
 fun CoinDetailsScreen(
     navController: NavController,
