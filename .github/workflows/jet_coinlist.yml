@@ -41,7 +41,7 @@ jobs:
         run: chmod +x gradlew
         
       #Run Detekt
-      - name: Run Unit Tests
+      - name: Run Detekt
         run: ./gradlew detekt
 
       #Run unit tests
