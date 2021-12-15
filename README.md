@@ -9,9 +9,7 @@ CoinList is a simple app based on Jetpack Compose, modern tech-stack and Clean A
 </p>
 
  <p align="center">
-  <img src="./arts/splash.png" width="240">
-  <img src="./arts/list.png" width="240">
-  <img src="./arts/detail.png" width="240">
+  <img src="./arts/preview.png">
 </p>
 
 <img src="/arts/light.gif" align="right"  width="24%"/>
@@ -30,9 +28,7 @@ CoinList is a simple app based on Jetpack Compose, modern tech-stack and Clean A
 * ✅ Material Components
 * ✅ Jetpack Navigation Component Compose
 * ✅ Light and Dark theme
-
-## To Do
-* ⚪ Unit test (incoming)
+* 🟩 Unit test (incoming)
 
 
 ## MAD Score
