@@ -37,20 +37,17 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
-        useIR = true
     }
+
     buildFeatures {
         compose = true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.0.5"
-        kotlinCompilerVersion = "1.5.31"
-    }
-    packagingOptions {
-        exclude("META-INF/AL2.0")
-        exclude("META-INF/LGPL2.1")
     }
 }
 
@@ -59,15 +56,14 @@ detekt {
     ignoreFailures = false
     baseline = file("$rootDir/app/detekt-baseline.xml")
     config.setFrom(rootProject.file("config/detekt.yml"))
+}
+
+tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
     reports {
-        xml {
-            enabled = true
-            destination = file("build/reports/detekt/detekt.xml")
-        }
-        html {
-            enabled = true
-            destination = file("build/reports/detekt/detekt.html")
-        }
+        html.required.set(true) // observe findings in your browser with structure and code snippets
+        xml.required.set(true) // checkstyle like format mainly for integrations like Jenkins
+        txt.required.set(true) // similar to the console output, contains issue signature to manually edit baseline files
+        sarif.required.set(true) // standardized SARIF format (https://sarifweb.azurewebsites.net/) to support integrations with Github Code Scanning
     }
 }
 
@@ -78,7 +74,6 @@ ktlint {
     outputToConsole.set(true)
     ignoreFailures.set(true)
     enableExperimentalRules.set(false)
-    additionalEditorconfigFile.set(file("/some/additional/.editorconfig"))
     kotlinScriptAdditionalPaths {
         include(fileTree("scripts/"))
     }
@@ -89,7 +84,6 @@ ktlint {
 }
 
 dependencies {
-
     google()
     test()
     coroutines()
