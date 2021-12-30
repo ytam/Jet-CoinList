@@ -107,7 +107,7 @@ fun ListComponent(
     searchText: String,
     viewModel: CoinListViewModel = hiltViewModel()
 ) {
-    LazyColumn() {
+    LazyColumn {
         items(
             viewModel.state.value.data.filter {
                 it.name.contains(

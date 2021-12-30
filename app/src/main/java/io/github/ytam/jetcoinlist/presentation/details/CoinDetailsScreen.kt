@@ -2,6 +2,7 @@ package io.github.ytam.jetcoinlist.presentation.details
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
@@ -38,6 +40,8 @@ import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
 import io.github.ytam.jetcoinlist.R
 import io.github.ytam.jetcoinlist.component.CoinDetailItem
+import io.github.ytam.jetcoinlist.component.CoinMemberList
+import io.github.ytam.jetcoinlist.data.remote.response.TeamMemberResponse
 import java.text.SimpleDateFormat
 
 @Suppress("LongMethod")
@@ -105,6 +109,10 @@ fun CoinDetailsScreen(
                         }
 
                         Spacer(modifier = Modifier.height(15.dp))
+
+                        if (coin.teamResponse.isNotEmpty()) {
+                            MemberList(coin.teamResponse)
+                        }
                     }
                 }
             }
@@ -142,6 +150,32 @@ fun CoinDetailsScreen(
                         modifier = Modifier.padding(all = 30.dp)
                     )
                 }
+            }
+        }
+    }
+}
+
+@Composable
+fun MemberList(
+    memberList: List<TeamMemberResponse>
+) {
+
+    Column {
+        Text(
+            text = "Team Members",
+            style = MaterialTheme.typography.h5,
+            color = MaterialTheme.colors.onSurface,
+            modifier = Modifier
+                .padding(12.dp)
+        )
+
+        LazyRow(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            items(memberList.size) {
+
+                CoinMemberList(teamMemberResponse = memberList[it])
             }
         }
     }
