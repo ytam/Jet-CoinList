@@ -10,11 +10,7 @@ class CoinListRepositoryImpl @Inject constructor(
     private val api: CoinListApi
 ) : CoinListRepository {
 
-    override suspend fun getCoinList(): List<CoinItemResponse> {
-        return api.getCoinList()
-    }
+    override suspend fun getCoinList(): List<CoinItemResponse> = api.getCoinList()
 
-    override suspend fun getCoinDetailsById(id: String): CoinDetailsResponse {
-        return api.getCoinDetailsById(id)
-    }
+    override suspend fun getCoinDetailsById(id: String): CoinDetailsResponse = api.getCoinDetailsById(id)
 }
