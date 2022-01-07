@@ -159,7 +159,6 @@ fun CoinDetailsScreen(
 fun MemberList(
     memberList: List<TeamMemberResponse>
 ) {
-
     Column {
         Text(
             text = "Team Members",
