@@ -29,6 +29,7 @@ fun CoinListItem(
     coin: CoinItem,
     onItemClick: (CoinItem) -> Unit
 ) {
+
     Card(
         backgroundColor = MaterialTheme.colors.surface,
         modifier = Modifier
@@ -44,6 +45,7 @@ fun CoinListItem(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
+
             Column(modifier = Modifier.align(Alignment.CenterVertically)) {
                 Text(
                     text = coin.symbol,

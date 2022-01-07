@@ -1,7 +1,6 @@
 package io.github.ytam.jetcoinlist.component
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -26,13 +25,16 @@ import io.github.ytam.jetcoinlist.data.remote.response.TeamMemberResponse
 fun CoinMemberList(
     teamMemberResponse: TeamMemberResponse
 ) {
+
     Card(
         backgroundColor = MaterialTheme.colors.onPrimary,
         modifier = Modifier
             .size(width = 150.dp, height = 200.dp)
             .clip(RoundedCornerShape(16.dp))
             .padding(12.dp)
+
     ) {
+
         Column(
             modifier = Modifier
                 .size(width = 150.dp, height = 200.dp)
@@ -41,6 +43,7 @@ fun CoinMemberList(
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
+
             Image(
                 painterResource(R.drawable.ic_baseline_assignment),
                 contentDescription = "",
@@ -56,6 +59,7 @@ fun CoinMemberList(
                 color = MaterialTheme.colors.onSurface,
                 modifier = Modifier
                     .padding(12.dp)
+
             )
             Text(
                 text = teamMemberResponse.position,
