@@ -12,6 +12,8 @@ buildscript {
         classpath(ClassPaths.daggerHiltGradlePlugin)
         classpath(ClassPaths.detekt)
         classpath(ClassPaths.ktlint)
+        classpath(ClassPaths.gradle_versions)
+
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

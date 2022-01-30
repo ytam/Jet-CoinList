@@ -6,6 +6,7 @@ object Versions {
         const val DAGGER_HILT = "2.39.1"
         const val DETEKT = "1.19.0-RC2"
         const val KTLINT = "10.2.0"
+        const val GRADLE_VERSIONS_PLUGIN = "0.38.0"
     }
 
     object Kotlin {
@@ -15,7 +16,7 @@ object Versions {
     object Google {
 
         object Androidx {
-            const val APP_COMPAT = "1.4.0"
+            const val APP_COMPAT = "1.4.1"
             const val CORE_KTX = "1.7.0"
             const val LIFECYCLE = "2.4.0"
             const val NAVIGATION_COMPOSE = "2.4.0-beta02"
@@ -43,12 +44,12 @@ object Versions {
         const val OK_HTTP = "5.0.0-alpha.2"
         const val RETROFIT = "2.9.0"
         const val RETROFIT_CONVERTER_GSON = "2.8.7"
-        const val GSON = "2.8.7"
+        const val GSON = "2.8.9"
     }
 
     object Coroutines {
-        const val CORE = "1.5.2"
-        const val ANDROID = "1.5.2"
+        const val CORE = "1.6.0"
+        const val ANDROID = "1.6.0"
     }
 
     object Test {
@@ -69,6 +70,6 @@ object Versions {
     }
 
     object Lottie {
-        const val COMPOSE = "4.2.0"
+        const val COMPOSE = "4.2.2"
     }
 }
