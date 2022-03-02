@@ -72,4 +72,8 @@ object Versions {
     object Lottie {
         const val COMPOSE = "4.2.2"
     }
+
+    object Coil {
+        const val COIL = "1.3.2"
+    }
 }

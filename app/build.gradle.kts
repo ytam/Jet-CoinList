@@ -91,4 +91,5 @@ dependencies {
     hilt()
     square()
     lottie()
+    coil()
 }
