@@ -47,6 +47,10 @@ object Dependencies {
 
     // LOTTIE
     internal const val LOTTIE_COMPOSE = "com.airbnb.android:lottie-compose:${Versions.Lottie.COMPOSE}"
+
+    // COIL
+    internal const val COIL_COMPOSE = "io.coil-kt:coil-compose:${Versions.Coil.COIL}"
+    internal const val COIL_SVG = "io.coil-kt:coil-svg:${Versions.Coil.COIL}"
 }
 
 fun DependencyHandler.kotlin() {
@@ -101,6 +105,11 @@ fun DependencyHandler.test() {
 
 fun DependencyHandler.lottie() {
     implementation(Dependencies.LOTTIE_COMPOSE)
+}
+
+fun DependencyHandler.coil() {
+    implementation(Dependencies.COIL_COMPOSE)
+    implementation(Dependencies.COIL_SVG)
 }
 
 private fun DependencyHandler.implementation(depName: String) {

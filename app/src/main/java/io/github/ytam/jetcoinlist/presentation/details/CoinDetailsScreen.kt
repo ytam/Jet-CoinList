@@ -28,10 +28,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
+import androidx.compose.foundation.Image
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberImagePainter
+import coil.decode.SvgDecoder
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionResult
 import com.airbnb.lottie.compose.LottieCompositionSpec
@@ -44,6 +49,7 @@ import io.github.ytam.jetcoinlist.component.CoinMemberList
 import io.github.ytam.jetcoinlist.data.remote.response.TeamMemberResponse
 import java.text.SimpleDateFormat
 
+@OptIn(ExperimentalCoilApi::class)
 @Suppress("LongMethod")
 @Composable
 fun CoinDetailsScreen(
@@ -90,6 +96,23 @@ fun CoinDetailsScreen(
                         CoinDetailItem(
                             stringResource(R.string.last_data_at),
                             convertDateString(coin.lastDataDate)
+                        )
+
+                        Spacer(modifier = Modifier.height(15.dp))
+
+                        Image(
+                            painter = rememberImagePainter(
+                                "https://graphs.coinpaprika.com/currency/chart/${coin.id}/7d/chart.svg",
+                                builder = {
+                                    decoder(SvgDecoder(LocalContext.current))
+                                }
+                            ),
+                            contentDescription = null,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .height(100.dp)
+                                .padding(horizontal = 20.dp)
+                                .align(Alignment.Center)
                         )
 
                         Spacer(modifier = Modifier.height(15.dp))
