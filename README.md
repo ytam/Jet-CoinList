@@ -24,6 +24,7 @@ CoinList is a simple app based on Jetpack Compose, modern tech-stack and Clean A
 * ✅ Viewmodel
 * ✅ Retrofit
 * ✅ Flow
+* ✅ Coil
 * ✅ Kotlin Coroutines
 * ✅ Material Components
 * ✅ Jetpack Navigation Component Compose
