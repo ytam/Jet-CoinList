@@ -27,29 +27,27 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.stringResource
-import androidx.compose.foundation.Image
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import coil.annotation.ExperimentalCoilApi
-import coil.compose.rememberImagePainter
+import coil.compose.AsyncImage
 import coil.decode.SvgDecoder
+import coil.request.ImageRequest
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionResult
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
-import io.github.ytam.jetcoinlist.R
+import io.github.ytam.coinlist.R
 import io.github.ytam.jetcoinlist.component.CoinDetailItem
 import io.github.ytam.jetcoinlist.component.CoinMemberList
 import io.github.ytam.jetcoinlist.data.remote.response.TeamMemberResponse
 import java.text.SimpleDateFormat
 
-@OptIn(ExperimentalCoilApi::class)
 @Suppress("LongMethod")
 @Composable
 fun CoinDetailsScreen(
@@ -100,13 +98,11 @@ fun CoinDetailsScreen(
 
                         Spacer(modifier = Modifier.height(15.dp))
 
-                        Image(
-                            painter = rememberImagePainter(
-                                "https://graphs.coinpaprika.com/currency/chart/${coin.id}/7d/chart.svg",
-                                builder = {
-                                    decoder(SvgDecoder(LocalContext.current))
-                                }
-                            ),
+                        AsyncImage(
+                            model = ImageRequest.Builder(LocalContext.current)
+                                .data("https://graphs.coinpaprika.com/currency/chart/${coin.id}/7d/chart.svg")
+                                .decoderFactory(SvgDecoder.Factory())
+                                .build(),
                             contentDescription = null,
                             modifier = Modifier
                                 .fillMaxWidth()

@@ -8,7 +8,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import io.github.ytam.jetcoinlist.presentation.details.CoinDetailsScreen
 import io.github.ytam.jetcoinlist.presentation.list.CoinListScreen
-import io.github.ytam.jetcoinlist.presentation.splash.SplashScreen
 
 @OptIn(ExperimentalComposeUiApi::class)
 @ExperimentalAnimationApi
@@ -17,13 +16,9 @@ fun Navigation() {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = Screen.SplashScreen.route
+        startDestination = Screen.CoinListScreen.route
     ) {
-        composable(
-            route = Screen.SplashScreen.route
-        ) {
-            SplashScreen(navController)
-        }
+
         composable(
             route = Screen.CoinListScreen.route
         ) {

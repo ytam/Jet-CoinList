@@ -23,14 +23,6 @@ object Dependencies {
     internal const val KOTLIN_COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Coroutines.CORE}"
     internal const val KOTLIN_COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Coroutines.ANDROID}"
 
-    // Test
-    internal const val JUNIT = "junit:junit:${Versions.Test.JUNIT}"
-    internal const val ANDROID_JUNIT_EXT = "androidx.test.ext:junit:${Versions.Test.ANDROID_JUNIT_EXT}"
-    internal const val ANDROID_ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.Test.ANDROID_ESPRESSO_CORE}"
-    internal const val UI_TEST_JUNIT = "androidx.compose.ui:ui-test-junit4:${Versions.Test.UI_TEST_JUNIT}"
-    internal const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.Test.UI_TOOLING}"
-    internal const val MOCKK = "io.mockk:mockk:${Versions.Test.MOCKK}"
-
     // SQUARE
     internal const val SQUARE_OK_HTTP = "com.squareup.okhttp3:okhttp:${Versions.Square.OK_HTTP}"
     internal const val SQUARE_OK_HTTP_LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.Square.OK_HTTP}"
@@ -41,7 +33,6 @@ object Dependencies {
     // DAGGER-HILT
     internal const val HILT_ANDROID = "com.google.dagger:hilt-android:${Versions.Hilt.HILT_ANDROID}"
     internal const val HILT_ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.Hilt.HILT_ANDROID_COMPILER}"
-    internal const val HILT_LIFECYCLE_VIEWMODEL = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.Hilt.HILT_LIFECYCLE_VIEWMODEL}"
     internal const val HILT_COMPILER = "androidx.hilt:hilt-compiler:${Versions.Hilt.HILT_COMPILER}"
     internal const val HILT_NAVIGATION_COMPOSE = "androidx.hilt:hilt-navigation-compose:${Versions.Hilt.HILT_NAVIGATION_COMPOSE}"
 
@@ -51,6 +42,8 @@ object Dependencies {
     // COIL
     internal const val COIL_COMPOSE = "io.coil-kt:coil-compose:${Versions.Coil.COIL}"
     internal const val COIL_SVG = "io.coil-kt:coil-svg:${Versions.Coil.COIL}"
+
+    internal const val SPLASH_SCREEN = "androidx.core:core-splashscreen:${Versions.SplashScreen.SPLASH_API}"
 }
 
 fun DependencyHandler.kotlin() {
@@ -89,18 +82,8 @@ fun DependencyHandler.square() {
 fun DependencyHandler.hilt() {
     implementation(Dependencies.HILT_ANDROID)
     kapt(Dependencies.HILT_ANDROID_COMPILER)
-    implementation(Dependencies.HILT_LIFECYCLE_VIEWMODEL)
     kapt(Dependencies.HILT_COMPILER)
     implementation(Dependencies.HILT_NAVIGATION_COMPOSE)
-}
-
-fun DependencyHandler.test() {
-    testImplementation(Dependencies.JUNIT)
-    androidTestImplementation(Dependencies.ANDROID_JUNIT_EXT)
-    androidTestImplementation(Dependencies.ANDROID_ESPRESSO_CORE)
-    androidTestImplementation(Dependencies.UI_TEST_JUNIT)
-    testImplementation(Dependencies.MOCKK)
-    debugImplementation(Dependencies.UI_TOOLING)
 }
 
 fun DependencyHandler.lottie() {
@@ -110,6 +93,10 @@ fun DependencyHandler.lottie() {
 fun DependencyHandler.coil() {
     implementation(Dependencies.COIL_COMPOSE)
     implementation(Dependencies.COIL_SVG)
+}
+
+fun DependencyHandler.splash() {
+    implementation(Dependencies.SPLASH_SCREEN)
 }
 
 private fun DependencyHandler.implementation(depName: String) {

@@ -48,9 +48,10 @@ import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.animateLottieCompositionAsState
 import com.airbnb.lottie.compose.rememberLottieComposition
-import io.github.ytam.jetcoinlist.R
+import io.github.ytam.coinlist.R
 import io.github.ytam.jetcoinlist.component.CoinListItem
 import io.github.ytam.jetcoinlist.navigation.Screen
+import io.github.ytam.jetcoinlist.ui.theme.CoinListTheme
 
 @ExperimentalAnimationApi
 @ExperimentalComposeUiApi
@@ -161,7 +162,7 @@ fun LottieWithDesc(
                 composition = lottieCompositionResult.value,
                 progress = progress,
                 modifier = Modifier
-                    .height(200.dp),
+                    .height(150.dp),
                 alignment = Alignment.Center
             )
 
