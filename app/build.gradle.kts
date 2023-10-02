@@ -52,9 +52,22 @@ android {
 
 detekt {
     buildUponDefaultConfig = true
-    ignoreFailures = false
-    baseline = file("$rootDir/app/detekt-baseline.xml")
+    allRules = false
+    parallel = true
     config.setFrom(rootProject.file("config/detekt.yml"))
+    baseline = file("$projectDir/app/detekt-baseline.xml")
+    autoCorrect = false
+
+    reports {
+        html {
+            required.set(true)
+            outputLocation.set(file("$rootProject/detekt-report.html"))
+        }
+    }
+
+    dependencies {
+        detektPlugins(ClassPaths.detektFormat)
+    }
 }
 
 tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {

@@ -78,15 +78,12 @@ fun CoinDetailsScreen(
                 .fillMaxSize()
                 .background(MaterialTheme.colors.background)
         ) {
-
             state.data?.let { coin ->
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(20.dp)
                 ) {
-
                     item {
-
                         CoinDetailItem(
                             stringResource(R.string.started_at),
                             convertDateString(coin.firstDataDate)
@@ -147,12 +144,10 @@ fun CoinDetailsScreen(
                 )
             }
             if (state.isLoading) {
-
                 Box(
                     contentAlignment = Alignment.Center,
                     modifier = Modifier.fillMaxSize()
                 ) {
-
                     val lottieCompositionResult: LottieCompositionResult =
                         rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.loading))
 
@@ -178,7 +173,6 @@ fun CoinDetailsScreen(
 fun MemberList(
     memberList: List<TeamMemberResponse>
 ) {
-
     Column {
         Text(
             text = "Team Members",
@@ -193,7 +187,6 @@ fun MemberList(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             items(memberList.size) {
-
                 CoinMemberList(teamMemberResponse = memberList[it])
             }
         }

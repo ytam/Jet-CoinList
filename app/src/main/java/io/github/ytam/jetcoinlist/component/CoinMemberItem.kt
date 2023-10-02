@@ -25,7 +25,6 @@ import io.github.ytam.jetcoinlist.data.remote.response.TeamMemberResponse
 fun CoinMemberList(
     teamMemberResponse: TeamMemberResponse
 ) {
-
     Card(
         backgroundColor = MaterialTheme.colors.onPrimary,
         modifier = Modifier
@@ -34,7 +33,6 @@ fun CoinMemberList(
             .padding(12.dp)
 
     ) {
-
         Column(
             modifier = Modifier
                 .size(width = 150.dp, height = 200.dp)
@@ -43,7 +41,6 @@ fun CoinMemberList(
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
-
             Image(
                 painterResource(R.drawable.ic_baseline_assignment),
                 contentDescription = "",

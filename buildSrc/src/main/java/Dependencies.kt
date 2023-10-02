@@ -44,6 +44,7 @@ object Dependencies {
     internal const val COIL_SVG = "io.coil-kt:coil-svg:${Versions.Coil.COIL}"
 
     internal const val SPLASH_SCREEN = "androidx.core:core-splashscreen:${Versions.SplashScreen.SPLASH_API}"
+
 }
 
 fun DependencyHandler.kotlin() {

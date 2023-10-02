@@ -179,7 +179,7 @@ exceptions:
 
 formatting:
   active: true
-  android: false
+  android: true
   autoCorrect: true
   ChainWrapping:
     active: true

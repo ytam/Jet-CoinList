@@ -51,7 +51,6 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import io.github.ytam.coinlist.R
 import io.github.ytam.jetcoinlist.component.CoinListItem
 import io.github.ytam.jetcoinlist.navigation.Screen
-import io.github.ytam.jetcoinlist.ui.theme.CoinListTheme
 
 @ExperimentalAnimationApi
 @ExperimentalComposeUiApi
@@ -70,7 +69,6 @@ fun CoinListScreen(
         modifier = Modifier
             .background(MaterialTheme.colors.background)
     ) {
-
         MainAppBar(
             searchWidgetState = searchWidgetState,
             searchTextState = searchTextState,
