@@ -33,8 +33,10 @@ private val darkThemeColors = darkColors(
 )
 
 @Composable
-fun CoinListTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
-
+fun CoinListTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable () -> Unit
+) {
     MaterialTheme(
         colors = if (darkTheme) darkThemeColors else lightThemeColors,
         typography = Typography,
